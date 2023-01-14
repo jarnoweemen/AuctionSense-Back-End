@@ -35,3 +35,7 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+[build]
+  image = "jarnoweemen/auctionsense:back-end_0.0.1"
+

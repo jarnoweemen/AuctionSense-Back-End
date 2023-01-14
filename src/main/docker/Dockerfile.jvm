@@ -7,18 +7,18 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.jvm -t quarkus/quarkus-auctionsense-jvm .
+# docker build -f src/main/docker/Dockerfile.jvm -t jarnoweemen/auctionsense:back-end_0.0.1 .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 --name quarkus-dev --network=back-end_auctionsense_network auctionsense/back-end:0.0.1
+# docker run -i --rm -p 8080:8080 --name quarkus-dev --network=back-end_auctionsense_network jarnoweemen/auctionsense:back-end_0.0.1
 #
 # If you want to include the debug port into your docker image
 # you will have to expose the debug port (default 5005) like this :  EXPOSE 8080 5005
 #
 # Then run the container using :
 #
-# docker run -i --rm -p 8080:8080 quarkus/quarkus-auctionsense-jvm
+# docker run -i --rm -p 8080:8080 jarnoweemen/auctionsense:back-end_0.0.1
 #
 # This image uses the `run-java.sh` script to run the application.
 # This scripts computes the command line to execute your Java application, and
