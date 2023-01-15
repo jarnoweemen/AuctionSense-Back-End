@@ -9,17 +9,18 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.quarkus:quarkus-hibernate-validator:2.15.3.Final'
+    implementation 'io.quarkus:quarkus-hibernate-reactive-panache:2.15.3.Final'
+    implementation 'io.quarkus:quarkus-reactive-pg-client:2.15.3.Final'
+    implementation 'io.quarkus:quarkus-resteasy-reactive:2.15.3.Final'
+    implementation 'io.quarkus:quarkus-resteasy-reactive-jackson:2.15.3.Final'
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
-    implementation 'io.quarkus:quarkus-resteasy-reactive-jackson'
-    implementation 'io.quarkus:quarkus-hibernate-reactive-panache'
-    implementation 'io.quarkus:quarkus-jdbc-h2'
-    implementation 'io.quarkus:quarkus-security-jpa'
-    implementation 'io.quarkus:quarkus-jdbc-postgresql'
-    implementation 'io.quarkus:quarkus-arc'
-    implementation 'io.quarkus:quarkus-resteasy-reactive'
     
-    testImplementation 'io.quarkus:quarkus-junit5'
-    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'io.quarkus:quarkus-junit5:2.15.3.Final'
+    testImplementation 'io.rest-assured:rest-assured:5.2.1'
+    testImplementation 'org.assertj:assertj-core:3.24.1'
+
+    annotationProcessor 'io.quarkus:quarkus-panache-common:2.15.3.Final'
 }
 
 group 'org.auctionsense'
