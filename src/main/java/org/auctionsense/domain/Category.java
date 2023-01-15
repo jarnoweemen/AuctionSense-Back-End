@@ -4,9 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 
-import io.quarkus.hibernate.reactive.panache.PanacheEntity;
-
-public class Category extends PanacheEntity{
+public class Category {
     @Id
     @GeneratedValue
     private Long id;
@@ -22,7 +20,7 @@ public class Category extends PanacheEntity{
     public void setId(Long id) {
         this.id = id;
     }
-    
+
     public String getName() {
         return name;
     }
