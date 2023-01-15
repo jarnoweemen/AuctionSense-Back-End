@@ -47,4 +47,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run:  ./gradlew build jacocoTestReport sonar
+          QUARKUS_DEV_DATABASE_KIND: ${{ secrets.QUARKUS_DEV_DATABASE_KIND }}
+          QUARKUS_DEV_USER: ${{ secrets.QUARKUS_DEV_USER }}
+          QUARKUS_DEV_DATABASE_PASSWORD: ${{ secrets.QUARKUS_DEV_DATABASE_PASSWORD }}
+          QUARKUS_DEV_DATABASE_URL: ${{ secrets.QUARKUS_DEV_DATABASE_URL }}
+        run:  ./gradlew build jacocoTestReport sonar --info
