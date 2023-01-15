@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "categories")
@@ -11,6 +12,7 @@ public class Category {
     @Id
     @GeneratedValue
     private Long id;
+    @NotBlank(message = "Category needs to have a name.")
     private String name;
 
     public Category() {
