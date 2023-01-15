@@ -1,14 +1,16 @@
 package org.auctionsense.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "categories")
 public class Category {
     @Id
     @GeneratedValue
     private Long id;
-    @NotBlank
     private String name;
 
     public Category() {
