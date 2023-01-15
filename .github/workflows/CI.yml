@@ -20,6 +20,11 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
       - name: Run build with Gradle Wrapper
+        env:
+          QUARKUS_DEV_DATABASE_KIND: ${{ secrets.QUARKUS_DEV_DATABASE_KIND }}
+          QUARKUS_DEV_USER: ${{ secrets.QUARKUS_DEV_USER }}
+          QUARKUS_DEV_DATABASE_PASSWORD: ${{ secrets.QUARKUS_DEV_DATABASE_PASSWORD }}
+          QUARKUS_DEV_DATABASE_URL: ${{ secrets.QUARKUS_DEV_DATABASE_URL }}
         run: ./gradlew build
 
   sonarcloud-analysis:
