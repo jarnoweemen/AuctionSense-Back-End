@@ -10,11 +10,11 @@ import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @QuarkusTest
-public class CategoryResourceTest {
-    
+class CategoryResourceTest {
+
     @Test
     @Order(1)
-    public void when_get_all_categories_are_equal_to_assert(){
+    void when_get_all_categories_are_equal_to_assert() {
         Response response = given()
                 .when()
                 .get("/api/all/categories")
@@ -23,7 +23,7 @@ public class CategoryResourceTest {
                 .contentType("application/json")
                 .extract()
                 .response();
-        
+
         assertThat(response.jsonPath().getList("name")).containsExactlyInAnyOrder("Games", "Cars");
     }
 }

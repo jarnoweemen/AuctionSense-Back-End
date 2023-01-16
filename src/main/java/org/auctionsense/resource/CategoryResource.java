@@ -21,12 +21,8 @@ public class CategoryResource {
     @Inject
     CategoryService categoryService;
 
-    public CategoryResource() {
-    }
-
     @GET
-    public Uni<List<Category>> allCategories()
-    {
+    public Uni<List<Category>> allCategories() {
         return categoryService.allCategories();
     }
 }

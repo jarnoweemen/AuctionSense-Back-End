@@ -15,11 +15,7 @@ public class CategoryService {
     @Inject
     CategoryRepository categoryRepository;
 
-    public CategoryService() {
-    }
-
-    public Uni<List<Category>> allCategories()
-    {
+    public Uni<List<Category>> allCategories() {
         return categoryRepository.listAll();
     }
 }
