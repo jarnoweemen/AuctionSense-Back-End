@@ -37,5 +37,5 @@ processes = []
     timeout = "2s"
 
 [build]
-  image = "jarnoweemen/auctionsense:back-end_0.0.1"
+  image = "jarnoweemen/auctionsense:back-end_0.1.0"
 
