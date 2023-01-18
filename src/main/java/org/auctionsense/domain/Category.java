@@ -1,22 +1,14 @@
 package org.auctionsense.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import org.auctionsense.utils.Generated;
-
-import io.quarkus.runtime.annotations.RegisterForReflection;
-
 @Entity
-@RegisterForReflection
 @Table(name = "categories")
-@Generated
 public class Category {
     @Id
-    @GeneratedValue
     private Long id;
     @NotBlank(message = "Category needs to have a name.")
     private String name;
