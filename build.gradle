@@ -16,6 +16,9 @@ dependencies {
     implementation 'io.quarkus:quarkus-reactive-pg-client:2.15.3.Final'
     implementation 'io.quarkus:quarkus-resteasy-reactive:2.15.3.Final'
     implementation 'io.quarkus:quarkus-resteasy-reactive-jackson:2.15.3.Final'
+    
+    implementation files('libs/openpojo-0.9.1.jar')
+
     implementation enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}")
     
     testImplementation 'io.quarkus:quarkus-junit5:2.15.3.Final'
