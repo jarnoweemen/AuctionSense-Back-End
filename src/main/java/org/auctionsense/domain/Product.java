@@ -9,6 +9,7 @@ import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "products")
+@NamedQuery(name = "Products.byCategory", query = "from Product p where p.category.name = :name")
 public class Product {
     @Id
     private Long id;
