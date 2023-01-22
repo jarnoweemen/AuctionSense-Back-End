@@ -1,7 +1,15 @@
 package org.auctionsense.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -12,13 +20,25 @@ public class Category {
     private Long id;
     @NotBlank(message = "Category needs to have a name.")
     private String name;
-    
-    public Category() {
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @JoinTable(
+        name = "categories_genres",
+        joinColumns = {@JoinColumn(name = "category_id")},
+        inverseJoinColumns = {@JoinColumn(name = "genre_id")}
+    )
+    private Set<Genre> genres = new HashSet<>();
 
+    public Category() {
+        super();
     }
 
     public Category(String name) {
         this.name = name;
+    }
+
+    public Category(String name, Set<Genre> genres) {
+        this.name = name;
+        this.genres = genres;
     }
 
     public Long getId() {
@@ -35,5 +55,13 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Genre> getGenres() {
+        return genres;
+    }
+
+    public void setGenres(Set<Genre> genres) {
+        this.genres = genres;
     }
 }
