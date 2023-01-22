@@ -10,3 +10,5 @@ INSERT INTO categories_genres (category_id, genre_id) VALUES ('1243258291', '423
 INSERT INTO categories_genres (category_id, genre_id) VALUES ('1243258291', '5202023929');
 INSERT INTO categories_genres (category_id, genre_id) VALUES ('5293949210', '1025932506');
 INSERT INTO categories_genres (category_id, genre_id) VALUES ('5293949210', '4102050629');
+
+INSERT INTO products (id, name, description, price, views, category_id) VALUES ('3528396035', 'Minecraft', 'Minecraft is a game about a man named Steve that has to survive in a block world. Craft your items by gathering different resources, build wherever you want and what you want.', '5.00', '0', '1243258291');
